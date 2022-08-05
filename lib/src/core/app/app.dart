@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Posts App',
       theme: getApplicationTheme(),
-      initialRoute: Routes.homePage,
+      initialRoute: Routes.splashPage,
       onGenerateRoute: RouteGenerator.getRoute,
     );
   }

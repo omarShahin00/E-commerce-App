@@ -74,6 +74,14 @@ ThemeData getApplicationTheme() {
           getBoldtStyle(color: ColorManager.black, fontSize: FontSize.s18),
       titleMedium:
           getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s24),
+      titleSmall:
+          getRegularStyle(color: ColorManager.doveGray, fontSize: FontSize.s20),
+      labelLarge:
+          getBoldtStyle(color: ColorManager.doveGray, fontSize: FontSize.s22),
+      labelMedium:
+          getRegularStyle(color: ColorManager.doveGray, fontSize: FontSize.s18),
+      labelSmall:
+          getRegularStyle(color: ColorManager.black, fontSize: FontSize.s16),
     ),
 
     // input decoration theme (text form field)
