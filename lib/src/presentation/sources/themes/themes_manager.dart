@@ -63,7 +63,7 @@ ThemeData getApplicationTheme() {
       displayMedium:
           getSemiBoldStyle(color: ColorManager.gray, fontSize: FontSize.s16),
       displaySmall:
-          getMediumStyle(color: ColorManager.white, fontSize: FontSize.s14),
+          getMediumStyle(color: ColorManager.black, fontSize: FontSize.s14),
       headlineLarge:
           getRegularStyle(color: ColorManager.white, fontSize: FontSize.s12),
       headlineMedium:
@@ -82,6 +82,10 @@ ThemeData getApplicationTheme() {
           getRegularStyle(color: ColorManager.doveGray, fontSize: FontSize.s18),
       labelSmall:
           getRegularStyle(color: ColorManager.black, fontSize: FontSize.s16),
+      bodyLarge: getRegularStyle(
+          color: ColorManager.mineShaft, fontSize: FontSize.s30),
+      bodyMedium: getRegularStyle(
+          color: ColorManager.silverChalice, fontSize: FontSize.s14),
     ),
 
     // input decoration theme (text form field)

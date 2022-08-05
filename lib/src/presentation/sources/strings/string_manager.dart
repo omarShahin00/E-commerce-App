@@ -9,4 +9,14 @@ class AppStrings {
 
   static const loginText = "Log in";
   static const signUpText = "Signup";
+
+  static const emailText = "Email";
+  static const passwordText = "Password";
+  static const nameText = "Name";
+
+  static const requiredText = "Required";
+  static const invalidEmailText = "Invaild Email Address";
+
+  static const dontHaveAnAcc = "Don't have an account?";
+  static const alreadyHaveAnAcc = "Already have an account?";
 }

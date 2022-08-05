@@ -13,6 +13,8 @@ class ColorManager {
 
   static Color tundora = const Color(0xff454242);
 
+  static Color silverChalice = const Color(0xffA3A3A3);
+
   static Color mineShaft = const Color(0xff323232);
 
   static Color black = const Color(0xff000000);

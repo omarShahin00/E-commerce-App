@@ -1,5 +1,6 @@
 import 'package:bolt_ecommerce/src/presentation/sources/colors/color_manager.dart';
 import 'package:bolt_ecommerce/src/presentation/sources/image/assets_manager.dart';
+import 'package:bolt_ecommerce/src/presentation/sources/routes/routes_manager.dart';
 import 'package:bolt_ecommerce/src/presentation/sources/strings/string_manager.dart';
 import 'package:bolt_ecommerce/src/presentation/sources/values/value_manager.dart';
 import 'package:bolt_ecommerce/src/presentation/widgets/rounded_button.dart';
@@ -59,18 +60,22 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             ),
             RoundedButton(
               text: AppStrings.loginText,
-              press: () {},
+              press: () {
+                Navigator.pushNamed(context, Routes.loginPage);
+              },
               color: ColorManager.white,
               backgroundColor: ColorManager.buttonColor,
               isLoading: false,
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.signUpPage);
+              },
               child: Text(
                 AppStrings.signUpText,
                 style: _theme.textTheme.labelSmall,
               ),
-            )
+            ),
           ],
         ),
       ),
