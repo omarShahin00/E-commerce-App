@@ -4,18 +4,20 @@ import 'package:bolt_ecommerce/src/presentation/widgets/text_field_container.dar
 import 'package:flutter/material.dart';
 
 class RoundedPasswordField extends StatefulWidget {
+  final TextEditingController? controller;
   final ValueChanged<String> onChanged;
   final String hintText;
   final IconData? icon;
   final dynamic validator;
 
-  const RoundedPasswordField(
-      {Key? key,
-      required this.onChanged,
-      required this.hintText,
-      required this.validator,
-      this.icon})
-      : super(key: key);
+  const RoundedPasswordField({
+    Key? key,
+    this.controller,
+    required this.onChanged,
+    required this.hintText,
+    required this.validator,
+    this.icon,
+  }) : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
@@ -57,7 +59,7 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
                 });
               },
               child: Icon(
-                Icons.visibility,
+                _showPassword == true ? Icons.visibility : Icons.visibility_off,
                 color: _theme.primaryColor,
               ),
             ),

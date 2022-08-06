@@ -20,6 +20,7 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> with InputValidationMixin {
   late ThemeData _theme;
   late String _email, _password, _name;
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     _theme = Theme.of(context);

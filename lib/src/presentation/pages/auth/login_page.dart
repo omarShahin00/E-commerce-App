@@ -20,7 +20,10 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> with InputValidationMixin {
   late ThemeData _theme;
-  late String _email, _password;
+  late final String email, password;
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     _theme = Theme.of(context);
@@ -39,90 +42,100 @@ class _LoginPageState extends State<LoginPage> with InputValidationMixin {
     );
   }
 
-  Column _body() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(
-          height: AppSize.s20,
-        ),
-        Padding(
-          padding: const EdgeInsets.all(AppPadding.p14),
-          child: Text(
-            AppStrings.loginText,
-            style: _theme.textTheme.bodyLarge,
+  Widget _body() {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(
+            height: AppSize.s20,
           ),
-        ),
-        const SizedBox(
-          height: AppSize.s50,
-        ),
-        RoundedInputField(
-          onChanged: (value) => _email = value,
-          hintText: AppStrings.emailText,
-          icon: Icons.email_outlined,
-          inputType: TextInputType.emailAddress,
-          validator: (email) {
-            if (isEmailValid(email)) {
-              return null;
-            } else if (isEmpty(email)) {
-              return AppStrings.requiredText;
-            } else if (!isEmailValid(email)) {
-              return AppStrings.invalidEmailText;
-            }
-          },
-        ),
-        RoundedPasswordField(
-          onChanged: (value) => _password = value,
-          hintText: AppStrings.passwordText,
-          validator: (password) {
-            if (!isEmpty(password)) {
-              return null;
-            } else {
-              return AppStrings.requiredText;
-            }
-          },
-        ),
-        Center(
-          child: RoundedButton(
-            text: AppStrings.loginText,
-            press: () {
-              Navigator.pushNamedAndRemoveUntil(
-                context,
-                Routes.homePage,
-                (route) => false,
-              );
+          Padding(
+            padding: const EdgeInsets.all(AppPadding.p14),
+            child: Text(
+              AppStrings.loginText,
+              style: _theme.textTheme.bodyLarge,
+            ),
+          ),
+          const SizedBox(
+            height: AppSize.s50,
+          ),
+          RoundedInputField(
+            controller: _emailController,
+            onChanged: (value) => email = value,
+            hintText: AppStrings.emailText,
+            icon: Icons.email_outlined,
+            inputType: TextInputType.emailAddress,
+            validator: (email) {
+              if (isEmailValid(email)) {
+                return null;
+              } else if (isEmpty(email)) {
+                return AppStrings.requiredText;
+              } else if (!isEmailValid(email)) {
+                return AppStrings.invalidEmailText;
+              }
             },
-            color: ColorManager.white,
-            backgroundColor: ColorManager.buttonColor,
-            isLoading: false,
           ),
-        ),
-        const SizedBox(
-          height: AppSize.s10,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              AppStrings.dontHaveAnAcc,
-              style: _theme.textTheme.bodyMedium,
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(
-              width: AppSize.s4,
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, Routes.signUpPage);
+          RoundedPasswordField(
+            controller: _passwordController,
+            onChanged: (value) => password = value,
+            hintText: AppStrings.passwordText,
+            validator: (password) {
+              if (!isEmpty(password)) {
+                return null;
+              } else {
+                return AppStrings.requiredText;
+              }
+            },
+          ),
+          Center(
+            child: RoundedButton(
+              text: AppStrings.loginText,
+              press: () {
+                // if (_formKey.currentState!.validate()) {
+                //   email = _emailController.text;
+                //   password = _passwordController.text;
+                // } else {
+
+                // }
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  Routes.homePage,
+                  (route) => false,
+                );
               },
-              child: Text(
-                AppStrings.signUpText,
-                style: _theme.textTheme.displaySmall,
-              ),
+              color: ColorManager.white,
+              backgroundColor: ColorManager.buttonColor,
+              isLoading: false,
             ),
-          ],
-        )
-      ],
+          ),
+          const SizedBox(
+            height: AppSize.s10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                AppStrings.dontHaveAnAcc,
+                style: _theme.textTheme.bodyMedium,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(
+                width: AppSize.s4,
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.signUpPage);
+                },
+                child: Text(
+                  AppStrings.signUpText,
+                  style: _theme.textTheme.displaySmall,
+                ),
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
