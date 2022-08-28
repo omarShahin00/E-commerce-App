@@ -12,15 +12,15 @@ dependencies:
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
   dio: ^4.0.6
-  equatable: ^2.0.3
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.0.1
-  flutter_svg: ^1.1.2
+  flutter_bloc: ^8.1.1
+  flutter_svg: ^1.1.4
   get_it: ^7.2.0
-  http: ^0.13.4
+  http: ^0.13.5
   internet_connection_checker: ^0.0.1+4
-  lottie: ^1.4.1
+  lottie: ^1.4.2
   shared_preferences: ^2.0.15
 
 dev_dependencies:
@@ -35,17 +35,20 @@ flutter:
     - assets/images/shoppingCart.json
     - assets/images/image.svg
     - assets/images/backArrow.png
+    - assets/images/filter.png
+    - assets/images/Menu Bar.png
+    - assets/images/Notofication.png
 
   fonts:
-     - family: Montserrat
-       fonts:
-         - asset: assets/fonts/Montserrat-Bold.ttf
-           weight: 700
-         - asset: assets/fonts/Montserrat-SemiBold.ttf
-           weight: 600
-         - asset: assets/fonts/Montserrat-Medium.ttf
-           weight: 500
-         - asset: assets/fonts/Montserrat-Regular.ttf
-           weight: 400
-         - asset: assets/fonts/Montserrat-Light.ttf
-           weight: 300
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Montserrat-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Montserrat-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Montserrat-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Montserrat-Light.ttf
+          weight: 300

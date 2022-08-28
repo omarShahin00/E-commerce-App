@@ -86,6 +86,8 @@ ThemeData getApplicationTheme() {
           color: ColorManager.mineShaft, fontSize: FontSize.s30),
       bodyMedium: getRegularStyle(
           color: ColorManager.silverChalice, fontSize: FontSize.s14),
+      bodySmall:
+          getRegularStyle(color: ColorManager.tundora, fontSize: FontSize.s22),
     ),
 
     // input decoration theme (text form field)

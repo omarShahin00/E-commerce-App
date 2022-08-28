@@ -19,4 +19,10 @@ class AppStrings {
 
   static const dontHaveAnAcc = "Don't have an account?";
   static const alreadyHaveAnAcc = "Already have an account?";
+
+  static const search = "Search Your Product";
+  static const categories = "Categories";
+  static const featured = "Featured";
+  static const bestSell = "Best Sell";
+  static const seeAll = "See All";
 }
